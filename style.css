@@ -100,6 +100,45 @@
   --container-lg: 1024px;
   --container-xl: 1280px;
 }
+.section {
+    scroll-margin-top: 100px; /* Compensa a altura da navegação + espaçamento */
+}
+
+#home, #about, #experience, #skills, #contact {
+    scroll-margin-top: 100px;
+}
+body {
+    padding-top: 80px; /* Altura da navegação */
+    margin: 0;
+}
+
+/* Ajuste a seção hero para compensar o padding */
+.hero-section {
+    margin-top: -80px;
+    padding-top: 80px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+/* Fallback para navegadores que não suportam backdrop-filter */
+@supports not (backdrop-filter: blur(10px)) {
+    .navbar {
+        background: rgba(255, 255, 255, 0.9);
+    }
+}
+
 
 /* Dark mode colors */
 @media (prefers-color-scheme: dark) {
