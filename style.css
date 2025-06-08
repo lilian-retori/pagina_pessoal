@@ -482,6 +482,73 @@ section {
     padding: var(--space-16);
   }
 }
-.about-container-centered
-.about-card, .card-header, e .card-icon
-.systems-centered 
+ 
+.about-compact {
+    position: relative;
+    padding: 4rem 0;
+    min-height: auto;
+}
+
+/* Container centralizado de exatamente 15cm */
+.about-center-container {
+    max-width: 15cm; /* Exatos 15cm conforme solicitado */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 10;
+}
+
+/* Cards individuais com efeito glassmorphism */
+.about-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.about-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), #176a75, var(--color-primary));
+    border-radius: 16px 16px 0 0;
+}
+
+/* Header dos cards com ícone */
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.card-icon {
+    font-size: 2.2rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary), #176a75);
+    border-radius: 50%;
+    color: white;
+    box-shadow: 0 4px 15px rgba(33, 128, 136, 0.3);
+    animation: iconF
